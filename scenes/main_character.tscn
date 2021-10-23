@@ -24,7 +24,7 @@ script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.25, 0.25 )
+zoom = Vector2( 0.2, 0.2 )
 
 [connection signal="angle" from="." to="AnimatedSprite" method="update_angle"]
 [connection signal="velocity" from="." to="AnimatedSprite" method="update_velocity"]
