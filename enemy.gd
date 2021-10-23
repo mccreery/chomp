@@ -11,12 +11,9 @@ func update_torch(angle):
 
 var path : = PoolVector2Array() setget set_path
 
-export (NodePath) var line
-
 func set_path(value : PoolVector2Array) -> void:
     path = value
     path.remove(0)
-    get_node(line).points = path
 
 func _physics_process(_delta):
     if path.empty():
