@@ -12,7 +12,6 @@ func _physics_process(_delta):
 
 func _ready() -> void:
     path = get_node(nav).get_simple_path(global_position, get_node(target).global_position, false)
-    $"../Line2D".points = path
 
 const EPS := 4
 func move_along_path(speed : float) -> void:
