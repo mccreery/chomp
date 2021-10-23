@@ -23,14 +23,20 @@ func get_input_direction():
         Input.get_action_strength("down") - Input.get_action_strength("up")
     ).clamped(1)
 
-func update_sprite(velocity):
-    if velocity != Vector2(0, 0):
-        var direction = Compass.get_direction(atan2(-velocity.y, velocity.x))
-        sprite.play(animations[direction])
-    else:
-        sprite.stop()
-
 func _physics_process(_delta):
+    var direction = get_input_direction()
+
+    if direction != Vector2(0, 0):
+        var angle = atan2(-direction.y, direction.x)
+        var facing = Compass.get_facing(angle)
+        sprite.animation = animations[facing]
+
     var velocity = get_input_direction() * speed
     velocity = move_and_slide(velocity)
-    update_sprite(velocity)
+
+    if velocity != Vector2(0, 0):
+        sprite.playing = true
+        sprite.speed_scale = velocity.length() / speed
+    else:
+        sprite.playing = false
+        sprite.frame = 0

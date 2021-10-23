@@ -1,6 +1,6 @@
 enum {LEFT, RIGHT, UP, DOWN}
 
-static func get_direction(angle):
+static func get_facing(angle):
     angle = fposmod(angle, PI * 2)
 
     if angle < PI / 4:
