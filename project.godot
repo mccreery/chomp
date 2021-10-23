@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
-"path": "res://character.gd"
+"path": "res://scripts/character.gd"
 }, {
 "base": "Reference",
 "class": "Compass",
 "language": "GDScript",
-"path": "res://compass.gd"
+"path": "res://scripts/compass.gd"
 } ]
 _global_script_class_icons={
 "Character": "",
@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Spooky 2D Jam"
-run/main_scene="res://TestLevel.tscn"
+run/main_scene="res://scenes/menu.tscn"
 config/icon="res://icon.png"
 
 [display]

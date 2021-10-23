@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://main_character.gd" type="Script" id=1]
-[ext_resource path="res://child.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://directional_sprite.gd" type="Script" id=4]
+[ext_resource path="res://scripts/main_character.gd" type="Script" id=1]
+[ext_resource path="res://sprites/child.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://scripts/directional_sprite.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 6 )
