@@ -7,6 +7,9 @@ export (String) var right = "right"
 export (String) var up = "up"
 export (String) var down = "down"
 
+export (NodePath) var torchPath
+onready var torch = get_node(torchPath)
+
 onready var animations = {
     Compass.LEFT: left,
     Compass.RIGHT: right,
@@ -27,6 +30,8 @@ func _physics_process(_delta):
 
     if direction != Vector2(0, 0):
         var angle = atan2(-direction.y, direction.x)
+        torch.rotation = -angle
+
         var facing = Compass.get_facing(angle)
         sprite.animation = animations[facing]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://main_character.gd" type="Script" id=1]
 [ext_resource path="res://child.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://torch-beam.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 6 )
@@ -9,6 +10,7 @@ extents = Vector2( 8, 6 )
 [node name="main_character" type="KinematicBody2D"]
 script = ExtResource( 1 )
 speed = 100
+torchPath = NodePath("Light2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -3 )
@@ -24,3 +26,9 @@ offset = Vector2( 0, -11 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.25, 0.25 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 0, -4 )
+texture = ExtResource( 3 )
+shadow_enabled = true
+shadow_filter = 2
