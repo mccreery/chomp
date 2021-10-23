@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://enemy.gd" type="Script" id=1]
 [ext_resource path="res://child.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://torch-beam.png" type="Texture" id=3]
+[ext_resource path="res://directional_sprite.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7, 6 )
 
 [node name="enemy" type="KinematicBody2D"]
 script = ExtResource( 1 )
+torch = NodePath("torch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -3 )
@@ -20,9 +22,13 @@ frames = ExtResource( 2 )
 animation = "up"
 frame = 3
 offset = Vector2( 0, -11 )
+script = ExtResource( 4 )
 
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 0, -4 )
+[node name="torch" type="Light2D" parent="."]
 texture = ExtResource( 3 )
 shadow_enabled = true
 shadow_filter = 2
+
+[connection signal="angle" from="." to="." method="update_torch"]
+[connection signal="angle" from="." to="AnimatedSprite" method="update_angle"]
+[connection signal="velocity" from="." to="AnimatedSprite" method="update_velocity"]

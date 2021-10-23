@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://character.gd"
+}, {
 "base": "Reference",
 "class": "Compass",
 "language": "GDScript",
 "path": "res://compass.gd"
 } ]
 _global_script_class_icons={
+"Character": "",
 "Compass": ""
 }
 

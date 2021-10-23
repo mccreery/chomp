@@ -23,10 +23,6 @@ position = Vector2( -112, 48 )
 position = Vector2( -242.663, 76.8487 )
 nav = NodePath("../..")
 target = NodePath("../enemy_target")
-speed = 100.0
 
 [node name="enemy_target" type="Node2D" parent="YSort"]
 position = Vector2( -323.148, 253.144 )
-
-[node name="Line2D" type="Line2D" parent="YSort"]
-width = 2.0
