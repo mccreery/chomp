@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "Compass",
+"language": "GDScript",
+"path": "res://compass.gd"
+} ]
+_global_script_class_icons={
+"Compass": ""
+}
+
 [application]
 
 config/name="Spooky 2D Jam"

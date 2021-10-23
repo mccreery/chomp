@@ -1,3 +1,5 @@
+class_name Compass
+
 enum {LEFT, RIGHT, UP, DOWN}
 
 static func get_facing(angle):

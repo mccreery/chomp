@@ -1,5 +1,4 @@
 extends KinematicBody2D
-const Compass = preload("compass.gd")
 
 export (int) var speed = 500
 
