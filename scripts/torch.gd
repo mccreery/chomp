@@ -12,8 +12,8 @@ func has_line_of_sight(node):
     var collision = space_state.intersect_ray(global_position, node.global_position)
     return collision.empty()
 
-export var light_strength = 1
-export var max_distance = 96
+export var light_strength = 1.0
+export var max_distance = 96.0
 
 var hurt_character = null
 

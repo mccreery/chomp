@@ -30,6 +30,7 @@ texture = ExtResource( 3 )
 shadow_enabled = true
 shadow_filter = 2
 script = ExtResource( 5 )
+light_strength = 1.5
 
 [node name="Area2D" type="Area2D" parent="torch"]
 
