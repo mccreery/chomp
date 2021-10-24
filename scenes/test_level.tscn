@@ -50,8 +50,6 @@ tile_data = PoolIntArray( -327696, 17, 0, -327694, 8, 0, -327692, 11, 0, -327686
 position = Vector2( -17.2264, 322.977 )
 speed = 50
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="YSort/main_character"]
-
 [node name="enemy" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( -188.207, 85.577 )
 speed = 50
@@ -73,5 +71,3 @@ tile_data = PoolIntArray( -262164, 0, 0, -262163, 0, 0, -262162, 0, 0, -262161, 
 [node name="enemy_patrol1" type="Polygon2D" parent="."]
 visible = false
 polygon = PoolVector2Array( 146.443, 64.6278, -184.526, 131.445, -29.0645, 177.772 )
-
-[connection signal="finished" from="YSort/main_character/AudioStreamPlayer2D" to="YSort/main_character" method="_on_AudioStreamPlayer2D_finished"]

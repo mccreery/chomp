@@ -57,12 +57,9 @@ func _process(delta):
     self.light_exposure -= delta * light_recover_rate
 
 func die():
-    set_process(false)
+    $AudioStreamPlayer2D.ending = true
+    get_tree().paused = true
     play_sfx(game_over_sound)
-
-func _on_AudioStreamPlayer2D_finished():
-    if $AudioStreamPlayer2D.stream == game_over_sound:
-        get_tree().call_deferred("change_scene", "res://scenes/menu.tscn")
 
 var close_enemy = null
 func _on_range_trigger_body_entered(body):
