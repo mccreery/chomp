@@ -11,7 +11,7 @@ export var light_recover_rate = 0.1
 
 func set_light_exposure(value):
     value = max(0, value)
-    health -= int(value)
+    self.health -= int(value)
     light_exposure = value - int(value)
     emit_signal("light_changed", value)
 
