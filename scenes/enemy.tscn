@@ -30,12 +30,12 @@ texture = ExtResource( 3 )
 shadow_enabled = true
 shadow_filter = 2
 script = ExtResource( 5 )
-light_strength = 1.5
+light_strength = 3.0
 
 [node name="Area2D" type="Area2D" parent="torch"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="torch/Area2D"]
-polygon = PoolVector2Array( 0, 0, 112, -64, 112, 64 )
+polygon = PoolVector2Array( 0, 0, 120, -64, 120, 64 )
 
 [connection signal="angle" from="." to="." method="update_torch"]
 [connection signal="angle" from="." to="AnimatedSprite" method="update_angle"]
