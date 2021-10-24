@@ -4,6 +4,14 @@ class_name MainCharacter
 var max_health = 3
 var health = 1 setget set_health
 
+var eaten = 0 setget set_eaten
+export var food_needed = 1
+
+func set_eaten(value):
+    eaten = value
+    if eaten >= food_needed:
+        win()
+
 var light_exposure = 0 setget set_light_exposure
 signal light_changed(light_exposure)
 
@@ -22,9 +30,8 @@ func update_meter(light_exposure):
     $CanvasLayer/Control/TextureRect/TextureProgress.value = light_exposure
 
 func play_sfx(stream):
-    if !$AudioStreamPlayer2D.is_playing():
-        $AudioStreamPlayer2D.stream = stream
-        $AudioStreamPlayer2D.play()
+    $AudioStreamPlayer2D.stream = stream
+    $AudioStreamPlayer2D.play()
 
 func set_health(value):
     health = clamp(value, 0, max_health)
@@ -39,6 +46,7 @@ func set_health(value):
 
 var game_over_sound = preload("res://sfx/game_over.wav")
 var eat_sound = preload("res://sfx/chomp.wav")
+var win_sound = preload("res://sfx/ded.wav")
 
 func get_input_direction():
     return Vector2(
@@ -53,11 +61,18 @@ func _process(delta):
         close_enemy.queue_free()
         play_sfx(eat_sound)
         self.health += 1
+        self.eaten += 1
 
     self.light_exposure -= delta * light_recover_rate
 
+func win():
+    $CanvasLayer/Control/Label.text = "You are full... you win!"
+    $AudioStreamPlayer2D.ending = true
+    get_tree().paused = true
+    play_sfx(win_sound)
+
 func die():
-    $CanvasLayer/Control/Label.text = "Game Over"
+    $CanvasLayer/Control/Label.text = "Game Over..."
     $AudioStreamPlayer2D.ending = true
     get_tree().paused = true
     play_sfx(game_over_sound)
