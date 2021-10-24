@@ -1,6 +1,6 @@
 extends Character
 
-const EPS = 1
+const EPS = 2
 
 export (NodePath) var nav
 export (NodePath) var target
