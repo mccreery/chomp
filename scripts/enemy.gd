@@ -47,16 +47,16 @@ func update_torch(angle):
 
 var path : = PoolVector2Array() setget set_path
 
-var line
+#var line
 func set_path(value : PoolVector2Array) -> void:
     path = value
     path.remove(0)
 
-    if line == null:
-        line = Line2D.new()
-        line.width = 1
-        get_tree().get_root().add_child(line)
-    line.points = value
+#    if line == null:
+#        line = Line2D.new()
+#        line.width = 1
+#        get_tree().get_root().add_child(line)
+#    line.points = value
 
 signal path_finished
 
