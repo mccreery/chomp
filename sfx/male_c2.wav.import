@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/male_c2.wav-46bf85ca7e691ab2f1fd4d0f2d69cbdd.sample"
+
+[deps]
+
+source_file="res://sfx/male_c2.wav"
+dest_files=[ "res://.import/male_c2.wav-46bf85ca7e691ab2f1fd4d0f2d69cbdd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://PixeloidSans.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/menu.gd" type="Script" id=2]
 [ext_resource path="res://sprites/menu page.png" type="Texture" id=3]
+[ext_resource path="res://music/spooky_bgm.ogg" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -51,9 +52,15 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 5, 5 )
 frames = SubResource( 6 )
-frame = 1
+frame = 4
 playing = true
 centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_top = 1.0
