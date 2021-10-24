@@ -19,7 +19,10 @@ export var light_recover_rate = 0.1
 
 func set_light_exposure(value):
     value = max(0, value)
-    self.health -= int(value)
+    if value > 1:
+        self.health = 0
+
+    #self.health -= int(value)
     light_exposure = value - int(value)
     emit_signal("light_changed", value)
 
@@ -39,7 +42,7 @@ func set_health(value):
     $AnimatedSprite.right = "right" + str(health)
     $AnimatedSprite.update_sprite()
 
-    speed = range_lerp(health, 1, max_health, 70, 30)
+    speed = range_lerp(health, 1, max_health, 70, 35)
 
     if value <= 0:
         die()
