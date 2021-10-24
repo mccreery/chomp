@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/main_character.gd" type="Script" id=1]
 [ext_resource path="res://sprites/monster.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://sprites/bar.png" type="Texture" id=3]
 [ext_resource path="res://scripts/directional_sprite.gd" type="Script" id=4]
+[ext_resource path="res://sprites/bar_fill.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 5 )
@@ -33,6 +35,38 @@ zoom = Vector2( 0.2, 0.2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range_trigger"]
 shape = SubResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = -128.0
+margin_top = -72.0
+margin_right = 128.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 40.0
+margin_bottom = 51.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="Control/TextureRect"]
+anchor_right = 0.28125
+anchor_bottom = 0.764706
+margin_left = 3.0
+margin_top = 1.0
+max_value = 1.0
+step = 0.0
+texture_progress = ExtResource( 5 )
+fill_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="angle" from="." to="AnimatedSprite" method="update_angle"]
 [connection signal="velocity" from="." to="AnimatedSprite" method="update_velocity"]

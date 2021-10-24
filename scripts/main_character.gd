@@ -19,7 +19,7 @@ func _ready():
     connect("light_changed", self, "update_meter")
 
 func update_meter(light_exposure):
-    $Control/Label.text = str(light_exposure)
+    $Control/TextureRect/TextureProgress.value = light_exposure
 
 func play_sfx(stream):
     if !$AudioStreamPlayer2D.is_playing():
