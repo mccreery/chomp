@@ -4,39 +4,39 @@
 [ext_resource path="res://scripts/menu.gd" type="Script" id=2]
 [ext_resource path="res://sprites/menu page.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 256, 144 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 256, 0, 256, 144 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 512, 0, 256, 144 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 768, 0, 256, 144 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 1024, 0, 256, 144 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 size = 18
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=8]
 size = 18
 font_data = ExtResource( 1 )
 
@@ -50,7 +50,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 5, 5 )
-frames = SubResource( 11 )
+frames = SubResource( 6 )
 frame = 4
 playing = true
 centered = false
@@ -71,7 +71,7 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0.588235 )
 margin_right = 138.0
 margin_bottom = 28.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.188235, 0.188235, 0.188235, 1 )
 text = "Start"
@@ -81,7 +81,7 @@ modulate = Color( 1, 1, 1, 0.588235 )
 margin_top = 32.0
 margin_right = 138.0
 margin_bottom = 60.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.188235, 0.188235, 0.188235, 1 )
 text = "How To Play"
@@ -91,7 +91,7 @@ modulate = Color( 1, 1, 1, 0.588235 )
 margin_top = 64.0
 margin_right = 138.0
 margin_bottom = 92.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.188235, 0.188235, 0.188235, 1 )
 text = "Quit"

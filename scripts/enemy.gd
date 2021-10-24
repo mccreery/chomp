@@ -1,6 +1,6 @@
 extends Character
 
-const EPS = 4
+const EPS = 1
 
 export (NodePath) var nav
 export (NodePath) var target
@@ -11,9 +11,16 @@ func update_torch(angle):
 
 var path : = PoolVector2Array() setget set_path
 
+#var line
 func set_path(value : PoolVector2Array) -> void:
     path = value
     path.remove(0)
+
+#    if line == null:
+#        line = Line2D.new()
+#        line.width = 1
+#        get_tree().get_root().add_child(line)
+#    line.points = value
 
 func _physics_process(_delta):
     if path.empty():
@@ -26,4 +33,4 @@ func _physics_process(_delta):
         walk_direction = ab.normalized()
 
 func _ready() -> void:
-    path = get_node(nav).get_simple_path(global_position, get_node(target).global_position, false)
+    set_path(get_node(nav).get_simple_path(global_position, get_node(target).global_position, false))
