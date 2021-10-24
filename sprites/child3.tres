@@ -4,67 +4,67 @@
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 44, 19, 22 )
+region = Rect2( 0, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 19, 44, 19, 22 )
+region = Rect2( 19, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 38, 44, 19, 22 )
+region = Rect2( 38, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 57, 44, 19, 22 )
+region = Rect2( 57, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 76, 44, 19, 22 )
+region = Rect2( 76, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 95, 44, 19, 22 )
+region = Rect2( 95, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 114, 44, 19, 22 )
+region = Rect2( 114, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 133, 44, 19, 22 )
+region = Rect2( 133, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 228, 44, 19, 22 )
+region = Rect2( 228, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 247, 44, 19, 22 )
+region = Rect2( 247, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 266, 44, 19, 22 )
+region = Rect2( 266, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 285, 44, 19, 22 )
+region = Rect2( 285, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 152, 44, 19, 22 )
+region = Rect2( 152, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 171, 44, 19, 22 )
+region = Rect2( 171, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 190, 44, 19, 22 )
+region = Rect2( 190, 0, 19, 22 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 209, 44, 19, 22 )
+region = Rect2( 209, 0, 19, 22 )
 
 [resource]
 animations = [ {

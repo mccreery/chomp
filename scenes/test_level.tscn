@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://sprites/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/main_character.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sprites/navigable.png" type="Texture" id=4]
+[ext_resource path="res://scenes/enemy2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/enemy3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/enemy4.tscn" type="PackedScene" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
@@ -56,6 +59,24 @@ speed = 50
 _nav = NodePath("../../Navigation2D")
 _patrol_route = NodePath("../../enemy_patrol1")
 
+[node name="enemy2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -513.418, 145.521 )
+speed = 50
+_nav = NodePath("../../Navigation2D")
+_patrol_route = NodePath("../../enemy_patrol2")
+
+[node name="enemy3" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -129.772, -61.7361 )
+speed = 50
+_nav = NodePath("../../Navigation2D")
+_patrol_route = NodePath("../../enemy_patrol3")
+
+[node name="enemy4" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 165.05, 57.9564 )
+speed = 50
+_nav = NodePath("../../Navigation2D")
+_patrol_route = NodePath("../../enemy_patrol4")
+
 [node name="enemy_target" type="Node2D" parent="YSort"]
 position = Vector2( -15.2505, 255.124 )
 
@@ -70,4 +91,20 @@ tile_data = PoolIntArray( -262164, 0, 0, -262163, 0, 0, -262162, 0, 0, -262161, 
 
 [node name="enemy_patrol1" type="Polygon2D" parent="."]
 visible = false
-polygon = PoolVector2Array( 146.443, 64.6278, -184.526, 131.445, -29.0645, 177.772 )
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( -12.7352, 30.2945, -220.97, 138.417, -23.4139, 195.815 )
+
+[node name="enemy_patrol2" type="Polygon2D" parent="."]
+visible = false
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( -388.493, 48.9822, -489.94, 155.769, -285.043, 140.419 )
+
+[node name="enemy_patrol3" type="Polygon2D" parent="."]
+visible = false
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( -307.735, 25.6225, 106.066, 2.93025, -34.76, -70.4859 )
+
+[node name="enemy_patrol4" type="Polygon2D" parent="."]
+visible = false
+color = Color( 1, 1, 1, 0 )
+polygon = PoolVector2Array( 36.6539, 30.2945, 246.891, 50.3171, 150.783, 98.3713 )
