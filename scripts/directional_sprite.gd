@@ -14,7 +14,10 @@ onready var animations = {
 
 func update_angle(angle):
     var facing = Compass.get_facing(angle)
-    animation = animations[facing]
+
+    var facing_animation = animations[facing]
+    if frames.has_animation(facing_animation):
+        animation = facing_animation
 
 func update_velocity(velocity, max_speed):
     if velocity != Vector2(0, 0):

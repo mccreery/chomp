@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/main_character.gd" type="Script" id=1]
-[ext_resource path="res://sprites/child.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://sprites/monster.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://scripts/directional_sprite.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -17,8 +17,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 3 )
 frames = ExtResource( 2 )
-animation = "up"
-frame = 3
+animation = "left"
 offset = Vector2( 0, -11 )
 script = ExtResource( 4 )
 
