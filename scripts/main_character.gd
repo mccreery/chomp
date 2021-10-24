@@ -1,7 +1,14 @@
 extends Character
 
 var max_health = 4
-var health = 4
+
+var health = 4 setget set_health
+
+func set_health(value):
+    health = clamp(value, 0, max_health)
+    if value <= 0:
+        die()
+
 var game_over_sound = preload("res://sfx/game_over.wav")
 
 func get_input_direction():
@@ -12,8 +19,6 @@ func get_input_direction():
 
 func _process(_delta):
     walk_direction = get_input_direction()
-    if health < 1:
-        die()
 
 func die():
     set_process(false)
