@@ -1,7 +1,25 @@
 extends Character
+class_name MainCharacter
 
 var max_health = 3
 var health = 1 setget set_health
+
+var light_exposure = 0 setget set_light_exposure
+signal light_changed(light_exposure)
+
+export var light_recover_rate = 0.1
+
+func set_light_exposure(value):
+    value = max(0, value)
+    health -= int(value)
+    light_exposure = value - int(value)
+    emit_signal("light_changed", value)
+
+func _ready():
+    connect("light_changed", self, "update_meter")
+
+func update_meter(light_exposure):
+    $Control/Label.text = str(light_exposure)
 
 func play_sfx(stream):
     if !$AudioStreamPlayer2D.is_playing():
@@ -25,13 +43,15 @@ func get_input_direction():
         Input.get_action_strength("down") - Input.get_action_strength("up")
     ).clamped(1)
 
-func _process(_delta):
+func _process(delta):
     walk_direction = get_input_direction()
 
     if Input.is_action_just_pressed("interact") and close_enemy != null:
         close_enemy.queue_free()
         play_sfx(eat_sound)
         self.health += 1
+
+    self.light_exposure -= delta * light_recover_rate
 
 func die():
     set_process(false)
