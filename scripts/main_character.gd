@@ -31,6 +31,9 @@ func set_health(value):
     $AnimatedSprite.left = "left" + str(health)
     $AnimatedSprite.right = "right" + str(health)
     $AnimatedSprite.update_sprite()
+
+    speed = range_lerp(health, 1, max_health, 70, 30)
+
     if value <= 0:
         die()
 
