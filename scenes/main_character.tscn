@@ -11,11 +11,11 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6, 5 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 18
 font_data = ExtResource( 7 )
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 radius = 25.0
 
 [node name="main_character" type="KinematicBody2D"]
@@ -74,7 +74,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 __meta__ = {
@@ -84,7 +84,7 @@ __meta__ = {
 [node name="range_trigger" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="range_trigger"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 pause_mode = 2

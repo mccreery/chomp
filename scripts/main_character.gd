@@ -5,7 +5,7 @@ var max_health = 3
 var health = 1 setget set_health
 
 var eaten = 0 setget set_eaten
-export var food_needed = 1
+export var food_needed = 4
 
 func set_eaten(value):
     eaten = value
