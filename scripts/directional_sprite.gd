@@ -7,12 +7,12 @@ export (String) var down = "down"
 
 export var horizontal = false
 
-onready var animations = {
-    Compass.LEFT: left,
-    Compass.RIGHT: right,
-    Compass.UP: up,
-    Compass.DOWN: down
-}
+func get_direction_animation(facing):
+    match facing:
+        Compass.LEFT: return left
+        Compass.RIGHT: return right
+        Compass.UP: return up
+        Compass.DOWN: return down
 
 var facing = Compass.RIGHT
 func update_angle(angle):
@@ -20,8 +20,10 @@ func update_angle(angle):
         facing = Compass.get_facing_horizontal(angle, facing)
     else:
         facing = Compass.get_facing(angle, facing)
+    update_sprite()
 
-    var facing_animation = animations[facing]
+func update_sprite():
+    var facing_animation = get_direction_animation(facing)
     if frames.has_animation(facing_animation):
         animation = facing_animation
 

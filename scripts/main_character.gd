@@ -1,6 +1,6 @@
 extends Character
 
-var max_health = 4
+var max_health = 3
 var health = 1 setget set_health
 
 func play_sfx(stream):
@@ -10,6 +10,9 @@ func play_sfx(stream):
 
 func set_health(value):
     health = clamp(value, 0, max_health)
+    $AnimatedSprite.left = "left" + str(health)
+    $AnimatedSprite.right = "right" + str(health)
+    $AnimatedSprite.update_sprite()
     if value <= 0:
         die()
 
