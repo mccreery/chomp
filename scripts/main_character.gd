@@ -19,7 +19,7 @@ func _ready():
     connect("light_changed", self, "update_meter")
 
 func update_meter(light_exposure):
-    $Control/TextureRect/TextureProgress.value = light_exposure
+    $CanvasLayer/Control/TextureRect/TextureProgress.value = light_exposure
 
 func play_sfx(stream):
     if !$AudioStreamPlayer2D.is_playing():
@@ -57,6 +57,7 @@ func _process(delta):
     self.light_exposure -= delta * light_recover_rate
 
 func die():
+    $CanvasLayer/Control/Label.text = "Game Over"
     $AudioStreamPlayer2D.ending = true
     get_tree().paused = true
     play_sfx(game_over_sound)
